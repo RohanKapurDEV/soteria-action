@@ -34,7 +34,7 @@ runs:
         export PATH="/home/runner/.local/share/solana/install/active_release/bin:$PATH"
         echo Installing bpf SDK...
         pwd
-        cd /home/runner/.profile
+        cd /home/runner/.local/share/solana/install/active_release
         ls
         exit 1
       shell: bash
