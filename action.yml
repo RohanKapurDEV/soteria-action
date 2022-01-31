@@ -34,7 +34,7 @@ runs:
         export PATH="/home/runner/.local/share/solana/install/active_release/bin:$PATH"
         echo Installing bpf SDK...
         cd ${{ inputs.program-path }}
-        cargo build-bpf
+        rustup toolchain link bpf /home/runner/.local/share/solana/install/releases/${{ inputs.solana-version }}/solana-release/bin/sdk/bpf/dependencies/bpf-tools/rust
         solana-keygen new -o "$HOME/.config/solana/id.json" --no-passphrase --silent
       shell: bash
     - name: cache deps
