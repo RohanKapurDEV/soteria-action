@@ -33,13 +33,8 @@ runs:
         echo "$HOME/.local/share/solana/install/active_release/bin" >> $GITHUB_PATH
         export PATH="/home/runner/.local/share/solana/install/active_release/bin:$PATH"
         echo Installing bpf SDK...
-        wget https://github.com/Snaipe/Criterion/releases/download/v2.3.3/criterion-v2.3.3-linux-x86_64.tar.bz2 -O criterion-v2.3.3-linux-x86_64.tar.bz2 --progress=dot:giga --retry-connrefused --read-timeout=30
-        tar --strip-components 1 -jxf criterion-v2.3.3-linux-x86_64.tar.bz2
-        set +e
-        rustup toolchain uninstall bpf
-        set -e
-        rustup toolchain link bpf bpf-tools/rust
-        exit 0
+        rustup toolchain list -v
+        rustup toolchain link bpf sdk/bpf/dependencies/bpf-tools/rust
       shell: bash
     - name: cache deps
       uses: Swatinem/rust-cache@v1
