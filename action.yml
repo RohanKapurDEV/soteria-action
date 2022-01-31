@@ -33,9 +33,9 @@ runs:
         sh -c "$(curl -sSfL https://release.solana.com/v${{ inputs.solana-version }}/install)"
         echo "$HOME/.local/share/solana/install/active_release/bin" >> $GITHUB_PATH
         export PATH="/home/runner/.local/share/solana/install/active_release/bin:$PATH"
-        echo Installing bpf SDK...
-        cd ${{ inputs.program-path }}
-        cargo install cargo-bpf
+#        echo Installing bpf SDK...
+#        cd ${{ inputs.program-path }}
+#        cargo install cargo-bpf
         solana-keygen new -o "$HOME/.config/solana/id.json" --no-passphrase --silent
       shell: bash
     - name: Install Soteria
