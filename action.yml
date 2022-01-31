@@ -34,8 +34,8 @@ runs:
         export PATH="/home/runner/.local/share/solana/install/active_release/bin:$PATH"
         echo Installing bpf SDK...
         pwd
-        cd solana{{ inputs.solana-version }}/sdk/bpf/scripts
-        ./install.sh
+        ls
+        exit 1
       shell: bash
     - name: cache deps
       uses: Swatinem/rust-cache@v1
