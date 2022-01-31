@@ -28,6 +28,7 @@ runs:
   steps:
 
     - name: Install Solana
+      uses: Swatinem/rust-cache@v1
       run: | 
         echo Installing Solana v${{ inputs.solana-version }}
         sh -c "$(curl -sSfL https://release.solana.com/v${{ inputs.solana-version }}/install)"
@@ -38,7 +39,6 @@ runs:
         cargo build cargo-bpf
 #       solana-keygen new -o "$HOME/.config/solana/id.json" --no-passphrase --silent
       shell: bash
-    - uses: Swatinem/rust-cache@v1
     - name: Install Soteria
       run: | 
         echo Installing Soteria...
