@@ -26,7 +26,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: Swatinem/rust-cache@v1
+
     - name: Install Solana
       run: | 
         echo Installing Solana v${{ inputs.solana-version }}
@@ -35,9 +35,10 @@ runs:
         export PATH="/home/runner/.local/share/solana/install/active_release/bin:$PATH"
 #       echo Installing bpf SDK...
 #       cd ${{ inputs.program-path }}
-#       cargo install cargo-bpf
+        cargo build cargo-bpf
 #       solana-keygen new -o "$HOME/.config/solana/id.json" --no-passphrase --silent
       shell: bash
+    - uses: Swatinem/rust-cache@v1
     - name: Install Soteria
       run: | 
         echo Installing Soteria...
