@@ -36,8 +36,6 @@ runs:
         cd ${{ inputs.program-path }}
         wget https://github.com/Snaipe/Criterion/releases/download/v2.3.3/criterion-v2.3.3-linux-x86_64.tar.bz2 -O criterion-v2.3.3-linux-x86_64.tar.bz2 --progress=dot:giga --retry-connrefused --read-timeout=30
         tar --strip-components 1 -jxf criterion-v2.3.3-linux-x86_64.tar.bz2
-        ./bpf-tools/rust/bin/rustc --version
-        ./bpf-tools/rust/bin/rustc --print sysroot
         set +e
         rustup toolchain uninstall bpf
         set -e
