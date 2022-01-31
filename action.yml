@@ -34,7 +34,7 @@ runs:
         export PATH="/home/runner/.local/share/solana/install/active_release/bin:$PATH"
         echo Installing bpf SDK...
         pwd
-        cd sdk/bpf/scripts
+        cd solana{{ inputs.solana-version }}/sdk/bpf/scripts
         ./install.sh
       shell: bash
     - name: cache deps
